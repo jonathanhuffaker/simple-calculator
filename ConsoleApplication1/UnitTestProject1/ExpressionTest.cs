@@ -8,7 +8,6 @@ namespace UnitTestProject1
     public class ExpressionTest
     {
         [TestMethod]
-        // Prove you can extract the terms of the expression.
         public void MyTestMethod1()
         {
             //Arrange
@@ -20,18 +19,26 @@ namespace UnitTestProject1
             Assert.IsNotNull(my_Expression);
         }
 
+        [TestMethod]
+        // Prove you can extract the terms of the expression.
+
+        public void ExtractExpression()
+        {
+ 
+            // Arrange
+            Expression my_expression = new Expression();
+            string userEntry = "1 + 1";
+            // Act
+            object [] expected = { 1 , '+' , 1 };
+            object[] actual = my_expression.ParseExpression(userEntry);
+
+            // Assert
+            CollectionAssert.AreEqual(expected, actual);
+
+        }
         //[TestMethod]
         //// Prove you can extract the operation embedded in the expression.
-        //public void MyTestMethod2()
-        //{
-        //    //Arrange
 
-        //    //Act
-
-        //    //Assert
-
-        //}
-        //[TestMethod]
         //// Ensure you have examples of GOOD and BAD input and have your Expression class throw an exception when there's an error.
         //public void MyTestMethod3()
         //{
@@ -43,8 +50,8 @@ namespace UnitTestProject1
 
         //}
 
-        
-        
-       
+
+
+
     }
 }

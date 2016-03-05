@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     public class Expression
     {
-        public string ParseExpression(string equation)
+        public object[] ParseExpression(string equation)
         {
 
             string expression = equation.Replace(" ", "");
@@ -19,13 +19,18 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine("Enter a valid operator. (Ex. +,-,*,/)");
             }
+            char opchar = expression[opsIndex];
+            char[] thisoperator = new char[] { opchar };
 
-            return expression;
-            //ParseExpression 
-            //int entry1= (expression);
-            //int entry2;
+            string[] formula = equation.Split(thisoperator);
 
 
+             
+            int entry1= Convert.ToInt32(formula[0]);
+            int entry2= Convert.ToInt32(formula[1]);
+
+            object[] parsedExpression = { entry1, opchar, entry2 };
+            return parsedExpression;
 
 
         }
