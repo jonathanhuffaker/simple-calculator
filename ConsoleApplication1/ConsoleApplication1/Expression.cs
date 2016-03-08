@@ -24,8 +24,6 @@ namespace ConsoleApplication1
 
             string[] formula = equation.Split(thisoperator);
 
-
-             
             int entry1= Convert.ToInt32(formula[0]);
             int entry2= Convert.ToInt32(formula[1]);
 
