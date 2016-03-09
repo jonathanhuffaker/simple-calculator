@@ -23,9 +23,34 @@ namespace ConsoleApplication1
             char[] thisoperator = new char[] { opchar };
 
             string[] formula = equation.Split(thisoperator);
+            if (formula.Length !=2)
+            {
+                throw new ArgumentException("Please enter a valid expression.");
+            }
 
-            int entry1= Convert.ToInt32(formula[0]);
-            int entry2= Convert.ToInt32(formula[1]);
+            int entry1;//= Convert.ToInt32(formula[0]);
+            int entry2;//= Convert.ToInt32(formula[1]);
+
+
+            try
+            {
+                entry1 = Convert.ToInt32(formula[0]);
+            }
+            catch (Exception)
+            {
+                throw new FormatException("Your first character needs to be an integer.");
+            }
+
+            try
+            {
+                entry2 = Convert.ToInt32(formula[1]);
+
+            }
+
+            catch (Exception)
+            {
+                throw new FormatException("The second character needs to be in integer");
+            }
 
             object[] parsedExpression = { entry1, opchar, entry2 };
             return parsedExpression;
