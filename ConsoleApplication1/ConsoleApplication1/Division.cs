@@ -8,5 +8,9 @@ namespace ConsoleApplication1
 {
     class Division
     {
+        public int addEntries(int entry1, int entry2)
+        {
+            return entry1 + entry2;
+        }
     }
 }
