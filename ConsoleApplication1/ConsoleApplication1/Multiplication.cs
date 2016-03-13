@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Multiplication
+    public class Multiplication
     {
         public int multiplyEntries(int entry1, int entry2)
         {

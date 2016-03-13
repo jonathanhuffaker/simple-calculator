@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Addition
+    public class Addition
     {
         public int addEntries(int entry1, int entry2)
         {

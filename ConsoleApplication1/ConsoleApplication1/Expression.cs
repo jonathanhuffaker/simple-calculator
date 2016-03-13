@@ -12,7 +12,7 @@ namespace ConsoleApplication1
         {
 
             string expression = equation.Replace(" ", "");
-            char[] operators = new char[] { '+', '-', '*', '/'};
+            char[] operators = new char[] { '+', '-', '*', '/', '%'};
             int opsIndex = expression.IndexOfAny(operators);
 
             if (opsIndex == -1)

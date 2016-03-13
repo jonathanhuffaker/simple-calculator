@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    public class Subtraction
+    public class Modulus
     {
-        public int subtractEntries(int entry1, int entry2)
+        public int modulus(int entry1, int entry2)
         {
-            return entry1 - entry2;
+            return entry1 % entry2;
         }
     }
 }
