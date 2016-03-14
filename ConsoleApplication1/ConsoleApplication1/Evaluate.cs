@@ -8,6 +8,12 @@ namespace ConsoleApplication1
 {
     class Evaluate
     {
+        if (opsIndex == +)
+            {
+            Addition add_expression = new Addition();
+            
+            
+            }
     }
 }
 //Chunk 2 - Evaluting Simple Expressions
