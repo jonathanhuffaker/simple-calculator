@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     public class Modulus
     {
-        public int modulus(int entry1, int entry2)
+        public int modulusEntries(int entry1, int entry2)
         {
             return entry1 % entry2;
         }

@@ -36,7 +36,7 @@ namespace ConsoleApplication1
             {
                 entry1 = Convert.ToInt32(formula[0]);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new FormatException("Your first character needs to be an integer.");
             }

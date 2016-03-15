@@ -11,7 +11,7 @@ namespace UnitTestProject1
         public void EvaluateTest1()
         {
             //Arrange
-            Addition my_Evaluation = new Addition();
+            Evaluate my_Evaluation = new Evaluate();
             //Act
             //Assert
             Assert.IsNotNull(my_Evaluation);
@@ -38,7 +38,7 @@ namespace UnitTestProject1
             Subtraction my_Evaluation = new Subtraction();
 
             //Act
-            int actual = 6 - 2;
+            int actual = my_Evaluation.subtractEntries(6, 2);
             int expected = 4;
 
             //Assert
@@ -83,6 +83,61 @@ namespace UnitTestProject1
 
             //Assert
             Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void evaluateShouldReturnResult()
+        {
+            Evaluate testEval = new Evaluate();
+            object[] whatEver = new object[] { 1, '*', 3 };
+            var actual = testEval.EvaluateResult(whatEver);
+            int expected = 3;
+
+            Assert.AreEqual(actual, expected);
+        }
+        [TestMethod]
+        public void evalAdd()
+        {
+            Evaluate addEval = new Evaluate();
+            object[] numsNop = new object[] { 1, '+', 3 };
+            var actual = addEval.EvaluateResult(numsNop);
+            int expected = 4;
+
+            Assert.AreEqual(actual, expected); 
+        }
+
+        [TestMethod]
+        public void evalSubtract()
+        {
+            Evaluate subEval = new Evaluate();
+            object[] numsNop = new object[] { 7, '-', 3 };
+            var actual = subEval.EvaluateResult(numsNop);
+            int expected = 4;
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void evalDivide()
+        {
+            Evaluate divEval = new Evaluate();
+            object[] numsNop = new object[] { 12, '/', 3 };
+            var actual = divEval.EvaluateResult(numsNop);
+            int expected = 4;
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void evalModulus()
+        {
+            Evaluate modEval = new Evaluate();
+            object[] numsNop = new object[] { 10, '%', 3 };
+            var actual = modEval.EvaluateResult(numsNop);
+            int expected = 1;
+
+            Assert.AreEqual(actual, expected);
+
         }
     }
 }

@@ -6,14 +6,45 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Evaluate
+    public class Evaluate
     {
-        if (opsIndex == +)
+       public int EvaluateResult(object[] entries)
+        {
+        
+            int entry1 = (int) entries[0];
+            int entry2 = (int)entries[2];
+            char op = (char) entries[1];
+
+            if (op == '+')
             {
-            Addition add_expression = new Addition();
-            
-            
+                Addition addEnts = new Addition();
+                return addEnts.addEntries(entry1, entry2);
             }
+            if (op == '-')
+            {
+                Subtraction subtractEnts = new Subtraction();
+                return subtractEnts.subtractEntries(entry1, entry2);
+            }
+            if (op == '*')
+            {
+                Multiplication multEnts = new Multiplication();
+                return multEnts.multiplyEntries(entry1, entry2);
+            }
+            if (op == '/')
+            {
+                Division divideEnts = new Division();
+                return divideEnts.divideEntries(entry1, entry2);
+            }
+            if (op == '%')
+            {
+                Modulus modulusEnts = new Modulus();
+                return modulusEnts.modulusEntries(entry1, entry2);
+            }
+            throw new Exception("Please enter a valid expression");
+
+
+        }
+
     }
 }
 //Chunk 2 - Evaluting Simple Expressions
