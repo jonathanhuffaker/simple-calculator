@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Stack
+    public class Stack
     {
+        public int last { get; set; }
+        public string lastQ { get; set; }
+
+
     }
 }

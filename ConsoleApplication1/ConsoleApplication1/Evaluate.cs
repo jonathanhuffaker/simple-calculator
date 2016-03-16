@@ -8,9 +8,11 @@ namespace ConsoleApplication1
 {
     public class Evaluate
     {
+
+        public Stack stackOnStack { get; set;}//what do i use here)
        public int EvaluateResult(object[] entries)
         {
-        
+        //intger entries and their operator
             int entry1 = (int) entries[0];
             int entry2 = (int)entries[2];
             char op = (char) entries[1];
@@ -42,7 +44,36 @@ namespace ConsoleApplication1
             }
             throw new Exception("Please enter a valid expression");
 
+            //Stack
 
+
+        }
+
+        //for the users last entered formula
+        public string LastCalc (string input)
+        {
+            string lastEnteredFormula = "";
+            string usersEntry = input;
+
+            if (usersEntry == "lastq")
+            {
+                lastEnteredFormula = stackOnStack.lastQ;
+            }
+            throw new Exception("Nope, I need a valid expression.");
+
+            return lastEnteredFormula;
+        }
+
+        //Get the last answer
+        public int LastResult(string input)
+        {
+            int lastAns;
+            string usersEntry = input.ToLower();
+            if (usersEntry == "last")
+            {
+                lastAns = stackOnStack.last;
+            }
+            throw new Exception("Not valid.  Type 'last' for last answer or 'lastq' for last formula");
         }
 
     }
