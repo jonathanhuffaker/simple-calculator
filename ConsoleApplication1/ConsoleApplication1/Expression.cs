@@ -8,6 +8,28 @@ namespace ConsoleApplication1
 {
     public class Expression
     {
+        public Stack stackOnStack { get; set; }
+        public Expression()
+        {
+            this.stackOnStack = new Stack();
+        }
+
+        public void handleInput(string input)
+        {
+            if (input == "lastq")
+            {
+                //print out the last question
+            }
+            else if (input == "last")
+            {
+                //print out last result
+            }
+            else
+            {
+                ParseExpression(input);
+            }
+        }
+
         public object[] ParseExpression(string equation)
         {
 
@@ -53,6 +75,7 @@ namespace ConsoleApplication1
             }
 
             object[] parsedExpression = { entry1, opchar, entry2 };
+            stackOnStack.lastQ = equation;
             return parsedExpression;
 
 

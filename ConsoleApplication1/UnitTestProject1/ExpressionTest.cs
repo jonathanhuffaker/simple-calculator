@@ -69,8 +69,65 @@ namespace UnitTestProject1
         }
 
 
+        //this will be for last & last q
 
 
+        //below tests the last answer
+        //[TestMethod]
+        //public void lastTest()
+        //{
+        //Arrange
+        //Evaluate evaluateLast = new Evaluate();
 
+        //Act
+        //    object[] numsNop = new object[] { 10, '+', 3 };
+        //int expected = 13;
+        //    int evalLast = evaluateLast.EvaluateResult(2)
+
+        //}
+
+
+        //below test the last question/formula
+
+        [TestMethod]
+        public void lastQTest()
+        {
+            //Arrange
+            Expression evaluateLastQ = new Expression();
+
+            Assert.IsNull(evaluateLastQ.stackOnStack.lastQ);
+            //Act
+            evaluateLastQ.ParseExpression("10 + 3");
+            string expected = ("10 + 3");
+            string actual = evaluateLastQ.stackOnStack.lastQ;
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestBadInput()
+        {
+            Expression parser = new Expression();
+
+            try
+            {
+                parser.ParseExpression("hello");
+            }
+            catch(IndexOutOfRangeException){ }
+            Assert.IsNull(parser.stackOnStack.lastQ);
+        }
+
+        [TestMethod]
+        public void TestBadInput2()
+        {
+            Expression parser = new Expression();
+
+            try
+            {
+                parser.ParseExpression("1 + ");
+            }
+            catch (FormatException) { }
+            Assert.IsNull(parser.stackOnStack.lastQ);
+        }
     }
 }

@@ -156,38 +156,5 @@ namespace UnitTestProject1
 
         }
 
-        //below tests the last answer
-        //[TestMethod]
-        //public void lastTest()
-        //{
-        //Arrange
-        //Evaluate evaluateLast = new Evaluate();
-
-        //Act
-        //    object[] numsNop = new object[] { 10, '+', 3 };
-        //int expected = 13;
-        //    int evalLast = evaluateLast.EvaluateResult(2)
-     
-        //}
-
-
-        //below test the last question/formula
-
-        [TestMethod]
-        public void lastQTest()
-        {
-            //Arrange
-            Evaluate evaluateLastQ = new Evaluate();
-
-            //Act
-            object[] numsNop = new object[] { 10, '+', 3 };
-
-            string expected = ("10 + 3");
-            string actual = evaluateLastQ.stackOnStack.lastQ;
-            //assert
-            Assert.AreEqual(expected, actual);
-
-
-        }
     }
 }
