@@ -73,18 +73,21 @@ namespace UnitTestProject1
 
 
         //below tests the last answer
-        //[TestMethod]
-        //public void lastTest()
-        //{
+        [TestMethod]
+        public void lastTest()
+        {
         //Arrange
-        //Evaluate evaluateLast = new Evaluate();
+        Expression evaluateLast = new Expression();
 
         //Act
-        //    object[] numsNop = new object[] { 10, '+', 3 };
-        //int expected = 13;
-        //    int evalLast = evaluateLast.EvaluateResult(2)
-
-        //}
+        object[] numsNop = new object[] { 10, '+', 3 };
+        int expected = 13;
+        evaluateLast.ParseExpression("10 + 3");
+        int actual = evaluateLast.stackOnStack.last;
+          
+         //assert
+         Assert.AreEqual(expected, actual); 
+        }
 
 
         //below test the last question/formula

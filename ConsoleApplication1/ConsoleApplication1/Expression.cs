@@ -11,19 +11,30 @@ namespace ConsoleApplication1
         public Stack stackOnStack { get; set; }
         public Expression()
         {
+            
             this.stackOnStack = new Stack();
         }
 
         public void handleInput(string input)
         {
+
+            int lastAnswer = 0;
+            string usersEntry = input;
             if (input == "lastq")
             {
                 //print out the last question
+                string lastQ = stackOnStack.lastQ;
+                Console.WriteLine(usersEntry);
             }
+
+
             else if (input == "last")
             {
                 //print out last result
+                lastAnswer = stackOnStack.last;
+                Console.WriteLine(lastAnswer);
             }
+        
             else
             {
                 ParseExpression(input);
