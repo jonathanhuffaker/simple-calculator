@@ -42,6 +42,14 @@ namespace ConsoleApplication1
                 Modulus modulusEnts = new Modulus();
                 return modulusEnts.modulusEntries(entry1, entry2);
             }
+
+           // adding = To use with constants
+
+            if(op == '=' && entry1 == int)
+            {
+                Equals equalSign = new Equals();
+                return equalSign.equalEntry(entry1, entry2);
+            }
             throw new Exception("Please enter a valid expression");
 
             //Stack

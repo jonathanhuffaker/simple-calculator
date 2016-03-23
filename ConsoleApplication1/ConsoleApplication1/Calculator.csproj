@@ -49,6 +49,7 @@
     <Compile Include="Division.cs" />
     <Compile Include="Evaluate.cs" />
     <Compile Include="Expression.cs" />
+    <Compile Include="Interface.cs" />
     <Compile Include="Modulus.cs" />
     <Compile Include="Multiplication.cs" />
     <Compile Include="Program.cs" />
