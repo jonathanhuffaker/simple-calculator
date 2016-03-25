@@ -57,20 +57,22 @@ namespace ConsoleApplication1
             string expressionToLower = expression.ToLower();
             int constantIndex = expressionToLower.IndexOfAny(lowerCons);
 
-            if (constantIndex == -1)
-            {
-                throw new Exception("Enter a valid character to be used as a constant.");
-            }
-
-            if (opsIndex == -1)
-            {
-                Console.WriteLine("Enter a valid operator. (Ex. +,-,*,/)");
-            }
+            //if (constantIndex == -1)
+            //{
+            //    throw new Exception("Enter a valid character to be used as a constant.");
+            //}
+            
+            //if (opsIndex == -1)
+            //{
+            //  throw new Exception("Enter a valid operator. (Ex. +,-,*,/)");
+            //}
+            
             char opchar = expression[opsIndex];
             char constantChar = expression[constantIndex];
             char[] thisoperator = new char[] { opchar };
 
             string[] formula = equation.Split(thisoperator);
+
             if (formula.Length !=2)
             {
                 throw new ArgumentException("Please enter a valid expression.");
