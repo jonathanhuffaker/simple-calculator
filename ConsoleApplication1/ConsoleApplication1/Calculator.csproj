@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Addition.cs" />
     <Compile Include="Division.cs" />
+    <Compile Include="Equals.cs" />
     <Compile Include="Evaluate.cs" />
     <Compile Include="Expression.cs" />
     <Compile Include="Interface.cs" />

@@ -8,33 +8,61 @@ namespace ConsoleApplication1
 {
     public class Stack
     {
+        Interface userInt = new Interface();
         public int last { get; set; }
         public string lastQ { get; set; }
 
-      
+        //Dictionary to catch a variable if equal is declared
 
+        public Dictionary<char, int> constantDictionary = new Dictionary<char, int>();
 
-        public char[] ContstantSet(string userInput)
+        public void ContstantSet(object[] userInput)
         {
-            string consToLower = userInput.ToLower();
-            //string thaEquals = userInput.IndexOfAny('=');
-            int constantIndex = consToLower.IndexOfAny(new char[] {'a', 'b',
-         'c', 'd', 'e', 'f', 'g',
-         'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-         'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'});
-
-           
-            if (constantIndex == -1)
+            if (userInput.Contains('='))
             {
-                throw new Exception("Enter a valid character to be used as a constant.");
+
+                constantDictionary.Add((char)userInput[0], (int)userInput[2]);
             }
-            // if (thaEquals != -1) {
-            return constantIndex;
+            else
+            {
+                throw new Exception("is variable declared correctly?");
+            }
+        }
+
+        public int ConstantGetter(char theKey)
+        {
+            int valueOfConstant;
+            if (constantDictionary.ContainsKey(theKey))
+            {
+                constantDictionary.TryGetValue(theKey, out valueOfConstant);
 
             }
+            else
+            {
+                throw new Exception();
+            }
+            return valueOfConstant;
+        }
+                    //changing Constant set and commenting out the below for the time being
+                //constantDictionary.Add((char)userInput[0], (int)userInput[2])
+
+            
 
 
-            //    int termVar;
-            //    bool success = int.TryParse(terms[1], out termVar);
 
+
+            //string strToLower = userInput.ToLower();
+            //string thaEquals = userInput.IndexOfAny('=');
+
+
+            //commenting out for now - refactored with expression for clarity
+            //   char[] lowerCons = new char[] {'a', 'b',
+            //'c', 'd', 'e', 'f', 'g',
+            //'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+            //'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'});
+
+
+        
+
+    }
 }

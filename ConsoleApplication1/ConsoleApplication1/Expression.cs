@@ -46,13 +46,28 @@ namespace ConsoleApplication1
 
             string expression = equation.Replace(" ", "");
             char[] operators = new char[] { '+', '-', '*', '/', '%', '='};
+
+            char[] lowerCons = new char[] {'a', 'b',
+         'c', 'd', 'e', 'f', 'g',
+         'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+         'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+
             int opsIndex = expression.IndexOfAny(operators);
+            string expressionToLower = expression.ToLower();
+            int constantIndex = expressionToLower.IndexOfAny(lowerCons);
+
+            if (constantIndex == -1)
+            {
+                throw new Exception("Enter a valid character to be used as a constant.");
+            }
 
             if (opsIndex == -1)
             {
                 Console.WriteLine("Enter a valid operator. (Ex. +,-,*,/)");
             }
             char opchar = expression[opsIndex];
+            char constantChar = expression[constantIndex];
             char[] thisoperator = new char[] { opchar };
 
             string[] formula = equation.Split(thisoperator);
@@ -71,7 +86,7 @@ namespace ConsoleApplication1
             }
             catch (Exception e)
             {
-                throw new FormatException("Your first character needs to be an integer.");
+                throw new FormatException("Your first character needs to be an integer or variable (ex A = 2, 1+1).");
             }
 
             try
@@ -85,10 +100,18 @@ namespace ConsoleApplication1
                 throw new FormatException("The second character needs to be in integer");
             }
 
-            object[] parsedExpression = { entry1, opchar, entry2 };
-            stackOnStack.lastQ = equation;
-            return parsedExpression;
+            if (constantIndex == -1) {
+                object[] parsedExpression = { entry1, opchar, entry2 };
+                stackOnStack.lastQ = equation;
+                return parsedExpression;
+            }
+            else
+            {
+                object[] parsedExpression = { entry1, constantChar, entry2 };
+                stackOnStack.lastQ = equation;
+                return parsedExpression;
 
+            }
 
         }
         // Prove you can extract the terms of the expression.

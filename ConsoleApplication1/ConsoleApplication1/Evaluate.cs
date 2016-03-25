@@ -45,7 +45,7 @@ namespace ConsoleApplication1
 
            // adding = To use with constants
 
-            if(op == '=' && entry1 == int)
+            if(op == '=')
             {
                 Equals equalSign = new Equals();
                 return equalSign.equalEntry(entry1, entry2);
